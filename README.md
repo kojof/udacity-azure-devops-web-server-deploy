@@ -42,31 +42,31 @@ Output
 
 4. To authenticate to Azure, you also need to obtain your Azure subscription ID with az account show:
 
-    az account show --query "{ subscription_id: id }"
+    <code> az account show --query "{ subscription_id: id }"</code>
 
 5. Build Image by specifying your Packer Template file - server.js
 
-   ./packer build ubuntu.json
+   <code> ./packer build ubuntu.json</code>
 
 
 ### Output
-An example of the output from the preceding commands is as [follows:] (https://github.com/kojof/udacity-azure-devops-web-server-deploy/blob/develop/Packer%20Template%20Output.png)
+An example of the output from the preceding commands is as [follows:](https://github.com/kojof/udacity-azure-devops-web-server-deploy/blob/develop/Packer%20Template%20Output.png)
 
 
 
 ## Terraform Template
 ### Create and apply a Terraform execution plan
 
-1. To initialize the Terraform deployment, run 'terraform init'. This command downloads the Azure modules required to create an Azure resource group.
+1. To initialize the Terraform deployment, run  <code>'terraform init' </code>. This command downloads the Azure modules required to create an Azure resource group.
 
-2. After initialization, you create an execution plan by running terraform plan - 'terraform plan -out solution.plan'.
+2. After initialization, you create an execution plan by running terraform plan -  <code>'terraform plan -out solution.plan'</code>.
 
-3. Once you're ready to apply the execution plan to your cloud infrastructure, you run terraform apply - 'terraform apply solution.plan'. 
+3. Once you're ready to apply the execution plan to your cloud infrastructure, you run terraform apply -  <code>'terraform apply solution.plan'</code>. 
 
-4. Destroy a Terraform execution plan - 'terraform destroy' 
+4. Destroy a Terraform execution plan -  <code>'terraform destroy' </code>
 
 ### Output
-To view the output of the Terraform Execution plan, run command 'Terraform Show' to see created infrastructure.
+To view the output of the Terraform Execution plan, run command  <code>'Terraform Show'</code> to see created infrastructure.
 
 Output of terraform [Show Plan:](https://github.com/kojof/udacity-azure-devops-web-server-deploy/blob/develop/Terraform%20Show%20Plan%20Output.png)
 
