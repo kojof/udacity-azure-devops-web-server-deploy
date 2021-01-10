@@ -1,4 +1,4 @@
-# Azure Infrastructure Operations Project: Deploying a scalable IaaS web server in Azure
+s# Azure Infrastructure Operations Project: Deploying a scalable IaaS web server in Azure
 
 ### Introduction
 For this project, you will write a Packer template and a Terraform template to deploy a customizable, scalable web server in Azure.
@@ -20,16 +20,16 @@ For this project, you will write a Packer template and a Terraform template to d
 ## Deploy a Policy
 Login to Azure Portal to create a policy that ensures all indexed resources are tagged and deny deployment if they do not. This will help us with organization and tracking, and make it easier to log when things go wrong.
 
-Use command - 'az policy assignment list' to verify the tag For instructions on how to create and apply policy in Azure CLI.  This policy is also viewable in Azure Portal. You can [view policy here] - (https://github.com/kojof/udacity-azure-devops-web-server-deploy/blob/develop/Azure%20Tagging%20Policy.png)
+Use command - <code>'az policy assignment list'</code> to verify the tag For instructions on how to create and apply policy in Azure CLI.  This policy is also viewable in Azure Portal. You can [view policy here](https://github.com/kojof/udacity-azure-devops-web-server-deploy/blob/develop/Azure%20Tagging%20Policy.png)
 
 ## Packer Template
-1.0Create a server image using Packer using server.js starter code from Github repository. 
+1. Create a server image using Packer using server.js starter code from Github repository. 
 
 2. Packer authenticates with Azure using a service principal. An Azure service principal is a security identity that you can use with apps, services, and automation tools like Packer. You control and define the permissions as to what operations the service principal can perform in Azure.
 
 3. Create a service principal with az ad sp create-for-rbac and output the credentials that Packer needs:
 
-    az ad sp create-for-rbac --query "{ client_id: appId, client_secret: password, tenant_id: tenant }"
+    <code>az ad sp create-for-rbac --query "{ client_id: appId, client_secret: password, tenant_id: tenant }"</code>
 
 Output
 
@@ -50,7 +50,7 @@ Output
 
 
 ### Output
-An example of the output from the preceding commands is as [follows]: (https://github.com/kojof/udacity-azure-devops-web-server-deploy/blob/develop/Packer%20Template%20Output.png)
+An example of the output from the preceding commands is as [follows:] (https://github.com/kojof/udacity-azure-devops-web-server-deploy/blob/develop/Packer%20Template%20Output.png)
 
 
 
@@ -58,7 +58,6 @@ An example of the output from the preceding commands is as [follows]: (https://g
 ### Create and apply a Terraform execution plan
 
 1. To initialize the Terraform deployment, run 'terraform init'. This command downloads the Azure modules required to create an Azure resource group.
-
 
 2. After initialization, you create an execution plan by running terraform plan - 'terraform plan -out solution.plan'.
 
@@ -69,5 +68,5 @@ An example of the output from the preceding commands is as [follows]: (https://g
 ### Output
 To view the output of the Terraform Execution plan, run command 'Terraform Show' to see created infrastructure.
 
-Output of terraform [Show Plan] - (https://github.com/kojof/udacity-azure-devops-web-server-deploy/blob/develop/Terraform%20Show%20Plan%20Output.png)
+Output of terraform [Show Plan:](https://github.com/kojof/udacity-azure-devops-web-server-deploy/blob/develop/Terraform%20Show%20Plan%20Output.png)
 
