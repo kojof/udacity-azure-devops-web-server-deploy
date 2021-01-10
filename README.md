@@ -31,18 +31,19 @@ Use command - <code>'az policy assignment list'</code> to verify the tag For ins
 
     <code>az ad sp create-for-rbac --query "{ client_id: appId, client_secret: password, tenant_id: tenant }"</code>
 
- <code>Output of Query above is for example:
+4. Output of Query above is for example:
+ <code>
 {
     "client_id": "f5b6a5cf-fbdf-4a9f-b3b8-3c2cd00225a4",
     "client_secret": "0e760437-bf34-4aad-9f8d-870be799c55d",
     "tenant_id": "72f988bf-86f1-41af-91ab-2d7cd011db47"
 } </code>
 
-4. To authenticate to Azure, you also need to obtain your Azure subscription ID with az account show:
+5. To authenticate to Azure, you also need to obtain your Azure subscription ID with az account show:
 
     <code> az account show --query "{ subscription_id: id }"</code>
 
-5. Build Image by specifying your Packer Template file - server.js
+6. Build Image by specifying your Packer Template file - server.js
 
    <code> ./packer build ubuntu.json</code>
 
